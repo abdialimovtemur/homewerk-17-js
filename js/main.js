@@ -26,18 +26,20 @@ function removeConsecutiveDuplicates(str) {
 
 
 
-// 3. Berilgan massivning elementlarini k qadamga o'ngga ko'chiring.
-
 function rotateArray(arr, k) {
-    let newArr = []
-    for (let i = 0; i < arr.length; i++) {
-        // console.log(arr[i])
+    let n = arr.length;
+    k = k % n; 
+    let newArr = [];
 
-
+    for (let i = 0; i < n; i++) {
+        newArr[(i + k) % n] = arr[i];
     }
+
+    return newArr;
 }
 
-// console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
+console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
+
 
 
 
@@ -72,21 +74,18 @@ function flattenArray(arr) {
 
 
 function multiplicationTable(n) {
-    let new_array = []
+    let new_array = [];
     for (let i = 1; i <= n; i++) {
-        // console.log(i)
-        let res = []
-        for (let g = 1; g < n; g++) {
-            console.log(g)
-            res.push(g)
+        let res = [];
+        for (let g = 1; g <= n; g++) {
+            res.push(i * g);
         }
-        new_array.push(res)
+        new_array.push(res);
     }
-    // return new_array
+    return new_array;
 }
-
-
 // console.log(multiplicationTable(3));
+// Output:
 // [
 //   [1, 2, 3],
 //   [2, 4, 6],
@@ -100,9 +99,7 @@ function multiplicationTable(n) {
 
 // 6. Berilgan massivni ikkita teng qismga ajrating. Agar massivning uzunligi toq bo'lsa, markaziy elementni ikkinchi qismga qo'shing.
 function splitArrayInHalf(arr) {
-    arr.forEach(element => {
-        console.log(element)
-    });
+
 }
 
 console.log(splitArrayInHalf([1, 2, 3, 4, 5])); // [[1, 2, 3], [4, 5]]
@@ -137,10 +134,8 @@ console.log(swapDiagonals([
 
 
 function findGCD(arr) {
-    arr.sort((a, b) => a - b)
-    for (let i = 1; i <= arr[0]; i++) {
 
-    }
+    
     // console.log(arr)
 }
 
